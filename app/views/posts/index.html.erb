@@ -9,12 +9,12 @@
     <th>削除</th>
   </tr>
     
-<%= @post.each do |post| %>
-  <tr>
-    <th><%= post.content %></th>
-
-    <th><%= link_to "つぶやきを編集する", edit_post_path(post.id) %></th>
-  </tr>
+  <% @posts.each do |post| %>
+    <tr>
+      <th><%= post.content %></th>
+      <th><%= link_to "つぶやきを編集する", edit_post_path(post.id) %></th>
+      <th><%= link_to "つぶやきを削除する", post_path(post.id), method: :delete%></th>
+    </tr>
   <% end %>
 </table>  
 

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @post = Post.all
+    @posts = Post.all
   end
 
   def new
@@ -23,5 +23,9 @@ class PostsController < ApplicationController
     redirect_to posts_path, notice: "編集完了"
   end
 
-  
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path, notice: "削除完了"
+  end
 end
