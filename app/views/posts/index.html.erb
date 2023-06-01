@@ -1,3 +1,21 @@
-<h1>Posts#index</h1>
+<h1>つぶやき一覧</h1>
+<p><%= link_to "新規投稿する", new_post_path %></p>
+<p><%= notice %> </p>
+
+<table>
+  <tr>
+    <th>つぶやき内容</th>
+    <th>編集</th>
+    <th>削除</th>
+  </tr>
+    
+<%= @post.each do |post| %>
+  <tr>
+    <th><%= post.content %></th>
+
+    <th><%= link_to "つぶやきを編集する", edit_post_path(post.id) %></th>
+  </tr>
+  <% end %>
+</table>  
+
 <p>Find me in app/views/posts/index.html.erb</p>
-<%= link_to "新規投稿する", new_post_path %> 
