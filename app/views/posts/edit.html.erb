@@ -1,11 +1,1 @@
-<%= form_with(model: @post, local: true) do |form| %>
-
-    <h2>つぶやきを入力してください</h2>
-    
-        <div class="blog_title">
-          <%= form.label :つぶやき%>
-          <%= form.text_field :content %>
-        </div>
-    
-        <%= form.submit "つぶやく" %>
-        <% end %>
+<%= render 'form' %>
